@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<center>
+
+
+    <form method="post" style="margin-top: 15%" enctype="multipart/form-data">
+        <font size="5">код доступа</font>
+        <br>
+        <input name="code">
+        <br>
+        <font size="5">ник игрока</font>
+        <br>
+        <input name="nickname">
+        <br>
+        <br>
+        <button type="submit">войти</button>
+    </form>
+</center>
+
+{% endblock %}

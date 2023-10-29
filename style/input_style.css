@@ -1,0 +1,20 @@
+
+
+    input, button {
+      border-radius: 5px;
+    }
+
+
+  @media (min-width: 350px) and (max-width: 560px) {
+    input, button {
+      width: 80%;
+      height: 25px;
+    }
+  }
+
+  @media (min-width: 560px) {
+    input, button {
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
