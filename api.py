@@ -9,14 +9,17 @@ blueprint = flask.Blueprint("api",
                             __name__,
                             template_folder='templates')
 
-
+"""
+тип запроса POST
+запрос для получения кода и создание комнаты.
+json который отправляется с запросом
+json = {
+        "type_game": string
+        }
+"""
 @blueprint.route("/api/zbolj23bn156m69mu6f3xzlmvmwm3m/get_code", methods=["POST"])
 def send_code():
-    """
-    data = {
-        "type_game": string
-    }
-    """
+
     db_sess = db_session.create_session()
     codes_data = db_sess.query(Room).all()
     codes = set()
@@ -47,14 +50,17 @@ def send_code():
 #     print(request.json)
 #     return jsonify({"status": "ok"})
 
+"""
+тип запроса GET
+запрос, возвращяющий играков из комнату.
+json который отправляется с запросом
+json = {
+        "code_room": string
+        }
 
+"""
 @blueprint.route("/api/zbolj23bn156m69mu6f3xzlmvmwm3m/update_player", methods=["GET"])
 def update_player():
-    """
-    data = {
-        "code_room": string
-    }
-    """
     db_sess = db_session.create_session()
     room = db_sess.query(Room).filter(Room.code == request.json["code_room"]).first()
     users_data = db_sess.query(User).filter(User.code == room.id).all()
@@ -86,14 +92,17 @@ def update_player():
 #         "points": points
 #     })
 
+"""
+тип запроса DELETE
+запрос, удаляющий комнату.
+json который отправляется с запросом
+json = {
+        "code_room": sring
+        }
 
+"""
 @blueprint.route("/api/zbolj23bn156m69mu6f3xzlmvmwm3m/exit", methods=["DELETE"])
 def exit():
-    """
-    {
-    "code_room": sring
-    }
-    """
     db_sess = db_session.create_session()
     room = db_sess.query(Room).filter(Room.code == request.json["code_room"]).first()
     users_data = db_sess.query(User).filter(User.code == room.id).all()
