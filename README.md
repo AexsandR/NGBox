@@ -34,7 +34,7 @@
 - ответ с сервера
 ```python
     json = {
-            "playrs": string[]
+            "players": string[]
             }
 ```
 3) ### запрос, удаляющий комнату.
