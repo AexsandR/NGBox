@@ -101,6 +101,20 @@ json = {
         }
 
 """
+@blueprint.route("/api/zbolj23bn156m69mu6f3xzlmvmwm3m/exit", methods=["POST"])
+def swich_status_room():
+    """
+    json = {
+        "code_room": string
+        }
+    """
+    db_sess = db_session.create_session()
+    room = db_sess.query(Room).filter(Room.code == request.json["code_room"]).first()
+    room.status_room == "идёт игра"
+    db_sess.add(room)
+    db_sess.commit()
+    return jsonify({"status": "ok"})
+
 @blueprint.route("/api/zbolj23bn156m69mu6f3xzlmvmwm3m/exit", methods=["DELETE"])
 def exit():
     db_sess = db_session.create_session()
@@ -108,6 +122,7 @@ def exit():
     users_data = db_sess.query(User).filter(User.code == room.id).all()
     for user in users_data:
         # db_sess.delete(db_sess.query(Game).filter(Game.token == user.token).first())
+
         db_sess.delete(user)
     db_sess.delete(room)
     db_sess.commit()

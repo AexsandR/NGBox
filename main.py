@@ -22,7 +22,9 @@ def main_page():
             if room.code == request.form["code"].upper():
                 code_in_bd = True
                 room_data = room
-        if code_in_bd:
+                users_in_room = db_sess.query(users.User).filter(users.User.code == room_data.id).all()
+                break
+        if code_in_bd and len(users_in_room) <= 7 and room_data.status_room == "ожидание играков":
             find_users = db_sess.query(users.User).filter(users.User.code == room_data.id).all()
             for user in find_users:
                 if request.form["nickname"] == user.name:
