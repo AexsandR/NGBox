@@ -11,6 +11,7 @@
 - /api/zbolj23bn156m69mu6f3xzlmvmwm3m/get_code 
 - тип запроса POST
 - json который отправляется с запросом
+- tyoe_game = название игры
 ```python
     json = {
             "type_game": string
