@@ -68,7 +68,7 @@ def update_player():
     for users_data in users_data:
         users.add(users_data.name)
 
-    return jsonify({"playrs": list(users)})
+    return jsonify({"players": list(users)})
 
 
 # @blueprint.route("/api/zbolj23bn156m69mu6f3xzlmvmwm3m/point_playr", methods=["GET"])
@@ -97,11 +97,11 @@ def update_player():
 запрос, удаляющий комнату.
 json который отправляется с запросом
 json = {
-        "code_room": sring
+        "code_room": string
         }
 
 """
-@blueprint.route("/api/zbolj23bn156m69mu6f3xzlmvmwm3m/exit", methods=["POST"])
+@blueprint.route("/api/zbolj23bn156m69mu6f3xzlmvmwm3m/switch", methods=["POST"])
 def swich_status_room():
     """
     json = {
