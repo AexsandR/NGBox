@@ -53,4 +53,18 @@
             "status": "ok"
             }
 ```
-
+4) ### запрос, для старта игры.
+- /api/zbolj23bn156m69mu6f3xzlmvmwm3m/switch
+- тип запроса POST
+- json который отправляется с запросом
+```python
+    json = {
+            "code_room": string
+            }
+```
+- ответ с сервера
+```python
+    json = {
+            "status": "ok"
+            }
+```
