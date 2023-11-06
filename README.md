@@ -5,7 +5,7 @@
 Технологии: Unity, Python flask, JS, HTML, CSS, SQLlite, GitHub
 
 
-# действующая ссылка -
+# действующая ссылка - https://4289-89-178-191-154.ngrok-free.app (временная)
 ## API
 1) ### запрос для получения кода и создание комнаты 
 - /api/zbolj23bn156m69mu6f3xzlmvmwm3m/get_code 
